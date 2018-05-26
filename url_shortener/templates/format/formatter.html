@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Short It{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="url">URL to make Short</label>
+    <input type="text" name="url" id="url" value="{{ urls.old_url }}" >
+    {% if urls.url %}
+        <label for="new_url" >Shortened URL</label>
+        <input type="text" name="new_url" value="{{ urls.url }}" readonly><br>
+    {% endif %}
+  <input type="submit" value="Short It">
+  </form>
+{% endblock %}

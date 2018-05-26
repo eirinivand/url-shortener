@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Short It{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    {%  if urls %}
+         <table>
+         <tr>
+           <th> Word</th>
+           <th> URL </th>
+         </tr>
+         {% for url in urls %}
+               <tr>
+                   <td>{{ url.word }}</td>
+                   <td>{{ url.for_url }}</td>
+               </tr>
+         {% endfor %}
+    {% endif %}
+{% endblock %}

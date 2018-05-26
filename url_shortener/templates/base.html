@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - Url Shortener</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Url Shortener</h1>
+  <ul>
+      <li><a href="{{ url_for('format.formatter') }}">Short It</a>
+      <li><a href="{{ url_for('format.recent') }}">Recent Shortments</a>
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

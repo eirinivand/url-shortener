@@ -1,0 +1,4 @@
+include url_shortener/schema.sql
+graft url_shortener/static
+graft url_shortener/templates
+global-exclude *.pyc

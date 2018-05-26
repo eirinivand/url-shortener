@@ -1,0 +1,9 @@
+cd to the directory where requirements.txt is located.
+activate your virtualenv.
+
+
+open a command prompt
+set FLASK_APP=url_shortener.py
+set FLASK_ENV=development
+flask run
+
