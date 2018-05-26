@@ -7,6 +7,12 @@ from url_shortener.db import get_db
 bp = Blueprint('redirector', __name__, url_prefix='')
 
 
+# a simple page that says hello
+@bp.route('/')
+def hello():
+    return 'Hello World!'
+
+
 @bp.route('/<word>', methods=('GET', 'POST'))
 def redirector(word):
     if request.method == 'GET':

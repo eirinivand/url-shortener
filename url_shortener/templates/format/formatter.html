@@ -10,7 +10,7 @@
     <input type="text" name="url" id="url" value="{{ urls.old_url }}" >
     {% if urls.url %}
         <label for="new_url" >Shortened URL</label>
-        <input type="text" name="new_url" value="{{ urls.url }}" readonly><br>
+        <input type="text" name="new_url" value="{{ url_for('redirector.hello', _external=True) }}{{ urls.url }}" readonly><br>
     {% endif %}
   <input type="submit" value="Short It">
   </form>
